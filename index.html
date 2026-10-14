@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多模态大模型 3D 图解</title>
+    <meta name="description" content="用 Three.js 3D 动画，一步一步看懂大语言模型如何处理文字、图片和语音，以及 Token 是怎么计算的。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='6' width='22' height='22' rx='6' fill='%2338bdf8'/%3E%3Crect x='36' y='6' width='22' height='22' rx='6' fill='%23f59e0b'/%3E%3Crect x='6' y='36' width='22' height='22' rx='6' fill='%2334d399'/%3E%3Crect x='36' y='36' width='22' height='22' rx='6' fill='%23a78bfa'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="stage"></div>
+
+      <header id="topbar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="brand-text">多模态大模型 <b>3D 图解</b></span>
+        </div>
+        <nav id="chapnav" aria-label="章节"></nav>
+        <div class="tools">
+          <button id="btn-bloom" class="tool on" title="辉光特效（性能不足时可关闭）">辉光</button>
+          <button id="btn-panel" class="tool" title="隐藏/显示讲解面板 (H)">面板</button>
+          <button id="btn-full" class="tool" title="全屏 (F)">全屏</button>
+        </div>
+      </header>
+
+      <aside id="panel">
+        <div class="panel-scroll">
+          <div class="panel-head">
+            <div class="kicker" id="ch-kicker"></div>
+            <h1 id="ch-title"></h1>
+            <p class="subtitle" id="ch-subtitle"></p>
+            <div class="dots" id="step-dots"></div>
+          </div>
+          <article id="step-content"></article>
+          <div id="widget"></div>
+        </div>
+        <footer class="panel-nav">
+          <button id="btn-prev" class="nav-btn">← 上一步</button>
+          <span id="step-count"></span>
+          <button id="btn-next" class="nav-btn primary">下一步 →</button>
+        </footer>
+      </aside>
+
+      <div id="hint">左键拖动旋转 · 滚轮缩放 · 右键平移 · ← → 切换步骤</div>
+      <div id="toast"></div>
+      <div id="loading"><div class="spinner"></div><span>正在加载…</span></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
