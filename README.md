@@ -2,6 +2,8 @@
 
 用 **Three.js** 做的交互式 3D 教程：一步一步看懂大语言模型（LLM）的工作原理、它如何处理**文字 / 图片 / 语音**，以及 **Token 是怎么计算的**。
 
+**在线体验：** <https://liyucheng1997.github.io/364_lab-multimodal-LLM/>（建议用电脑上的 Chrome / Edge 打开）
+
 全部讲解为中文，共 **11 章、73 个步骤**。每一步都有对应的 3D 动画，可以拖动旋转、缩放观察；部分步骤带交互实验（实时分词、温度采样、梯度下降、上传图片、录音、Token 计算器等）。
 
 ## 快速开始
@@ -86,7 +88,7 @@ src/
 npm run build
 ```
 
-产物在 `dist/` 目录，是纯静态文件，可部署到任意静态托管（GitHub Pages、Netlify、Nginx 等）。由于使用了 ES 模块，需要通过 HTTP 服务器访问，不能直接双击 `index.html` 打开。本地预览可用：
+产物在 `dist/` 目录，是纯静态文件，可部署到任意静态托管（GitHub Pages、Netlify、Nginx 等）。本仓库推送到 `main` 分支后，会由 GitHub Actions（`.github/workflows/deploy.yml`）自动构建并发布到 GitHub Pages。由于使用了 ES 模块，需要通过 HTTP 服务器访问，不能直接双击 `index.html` 打开。本地预览可用：
 
 ```bash
 npm run preview
